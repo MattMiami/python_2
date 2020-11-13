@@ -21,6 +21,7 @@ empleado1=Empleado("Juan","Garcia","454454s","Calle falsa 123",2,65478541,25000)
 empleado2=Empleado("Maria","Marquez","234454s","Calle 3",1,6878541,15000)
 empleado1.imprimir()
 empleado1.incrementarSalario(2)
+print("--------------------FIN EMPLEADO-----------------")
 
 class Secretario(Empleado):
     def __init__(self,nombre, apellido, dni, direccion, antiguedad, tlf, salario, fax, despacho, puesto):
@@ -38,7 +39,12 @@ class Secretario(Empleado):
 secretario1=Secretario("Pepe","Martin","5458787w","Calle 1",3,65475413,30000, "9657854123","D01","Secretario de direccion")
 secretario2=Secretario("Sandra","Moreno","6523527t","Calle 67",2,67895432,30000, "9665756746","D01","Secretario de direccion")
 secretario1.imprimir()
+print(
+    "El fax del secretario ", secretario1.nombre, " es: ", secretario1.fax,
+    "El despacho de secretario ", secretario1.nombre, " es el: ", secretario1.despacho,
+    "Su puesto en la empresa es ", secretario1.puesto)
 secretario1.incrementarSalario()
+print("--------------------FIN SECRETARIO-----------------")
 
 class Coche:
     def __init__(self,matricula, marca, modelo):
@@ -69,7 +75,13 @@ class Vendedor(Empleado):
 listaVendedores=["Tomás","Luis","Antonio"]
 vendedor1=Vendedor("Sergio","Lopez","6523527t","Calle Villa",1,674523652,20000, coche1, "Ventas", 5, listaClientes)
 vendedor1.imprimir()
+print(
+    "Marcar coche: ", vendedor1.coche.marca,
+    "Area de trabajo: ", vendedor1.area,
+    "Comisión: ", vendedor1.comision,
+    "Lista de clientes: ", vendedor1.listaClientes)
 vendedor1.incrementarSalario()
+print("--------------------FIN VENDEDOR-----------------")
 
 class Jefe(Empleado):
     def __init__(self, nombre, apellido, dni, direccion, antiguedad, tlf, salario, secretario1, coche2, despacho, listaVendedores ):
@@ -93,4 +105,10 @@ class Jefe(Empleado):
 
 jefe1=Jefe("Jose Juan","Martinez","54125478E","Calle Sevilla",5,674541214,40000,secretario1,coche2,"Direccion",listaVendedores)
 jefe1.imprimir()
+print(
+    "Secretario: ", jefe1.secretario.nombre," --- ",
+    "Marca coche: ", jefe1.coche.marca," --- ",
+    "Despacho: ", jefe1.despacho," --- ",
+    "Lista de vendedores: ", jefe1.listaVendedores)
 jefe1.incrementarSalario()
+print("------------------------FIN JEFE-----------------")
